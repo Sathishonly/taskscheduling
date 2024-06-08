@@ -52,23 +52,17 @@ class Inactiveusers extends Command
                     $mail = new PHPMailer(true);
                     $mail->SMTPDebug = 0;
                     $mail->isSMTP();
-                    $mail->Host = 'smtp.gmail.com'; //  smtp host
+                    $mail->Host = 'smtp.gmail.com'; 
                     $mail->SMTPAuth = true;
 
-                    $mail->Username = 'example@gmail.com'; //  sender username
-                    $mail->Password = 'password'; // sender password
+                    $mail->Username = 'example@gmail.com'; 
+                    $mail->Password = 'password'; 
 
-                    $mail->SMTPSecure = 'tls'; // encryption - ssl/tls
-                    $mail->Port = 587; // port - 587/465
+                    $mail->SMTPSecure = 'tls'; 
+                    $mail->Port = 587; 
 
                     $mail->setFrom('example@gmail.com', 'Account Removed Due to Inactivity');
-
-                    //$mail->addCC($request->emailCc);
-                    //$mail->addBCC($request->emailBcc);
-
-                    //   $mail->addReplyTo('sender-reply-email', 'sender-reply-name');
-
-                    $mail->isHTML(true); // Set email content format to HTML
+                    $mail->isHTML(true); 
 
                     $mail->Subject = 'Account Removed Due to Inactivity';
                     $mail->Body = '<html>
